@@ -1,0 +1,9 @@
+TWEET_URL = "https://twitter.com/tyleroakley/status/1173977672701157376"
+LOGIN_URL = "https://twitter.com/login"
+DRIVER_PATH = "../chromedriver.exe"
+USERNAME = "Futbolero_GG"
+PASSWORD = "haroldkill"
+ONLY_USERNAME = True #True: Username without @
+RETWEETS_FILENAME = "retweets.csv"
+LIKES_FILENAME = "likes.csv"
+REPLIES_FILENAME = "replies.csv"
