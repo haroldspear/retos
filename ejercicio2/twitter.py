@@ -27,7 +27,7 @@ def getUsernamesLikesOrRetweetsOrReply(output_filename):
     usernames_list = []
     scroll_times = 0
     if output_filename == RETWEETS_FILENAME or output_filename == LIKES_FILENAME:
-        scroll_times = 30
+        scroll_times = 70
     elif output_filename == REPLIES_FILENAME:
         scroll_times = 500
     for i in range(scroll_times):
@@ -38,11 +38,10 @@ def getUsernamesLikesOrRetweetsOrReply(output_filename):
         for username in usernames:
             try:
                 username_text = username.get_attribute("innerHTML")+"\n"
+                if ONLY_USERNAME:
+                    username_text = username_text.split("@")[1]
                 if username_text not in usernames_list:
-                    if ONLY_USERNAME:
-                        usernames_list.append(username_text.split("@")[1])
-                    else:
-                        usernames_list.append(username_text)
+                    usernames_list.append(username_text)
             except Exception as e:
                 print("Error getting an username")
                 print(e)
